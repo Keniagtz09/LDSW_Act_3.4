@@ -32,10 +32,9 @@ class PantallaPrincipal extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column( // 2. WIDGET: Column (Alineación vertical)
+          child: Column( // 2. WIDGET: Column
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Encabezado de sección
               const Text(
                 'Película Destacada',
                 style: TextStyle(
@@ -45,11 +44,10 @@ class PantallaPrincipal extends StatelessWidget {
               ),
               const SizedBox(height: 12),
 
-              // Banner principal usando Stack y Container
-              Stack( // 3. WIDGET: Stack (Superposición de elementos)
+              // Banner principal con Stack y Container
+              Stack( // 3. WIDGET: Stack
                 children: [
-                  // Contenedor base de la imagen/poster
-                  Container( // 4. WIDGET: Container (Dimensiones y bordes)
+                  Container( // 4. WIDGET: Container
                     height: 200,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -57,13 +55,12 @@ class PantallaPrincipal extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       image: const DecorationImage(
                         image: NetworkImage(
-                          'https://picsum.photos/600/300', // Imagen de prueba
+                          'https://picsum.photos/600/300',
                         ),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  // Etiqueta superpuesta sobre la portada
                   Positioned(
                     top: 12,
                     right: 12,
@@ -90,7 +87,6 @@ class PantallaPrincipal extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Información y detalles de la película usando Row
               const Text(
                 'Detalles de la función',
                 style: TextStyle(
@@ -100,28 +96,25 @@ class PantallaPrincipal extends StatelessWidget {
               ),
               const SizedBox(height: 12),
 
-              Row( // 5. WIDGET: Row (Alineación horizontal)
+              const Row( // 5. WIDGET: Row
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // Calificación
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.star, color: Colors.amber),
                       SizedBox(width: 4),
                       Text('4.8 / 5.0'),
                     ],
                   ),
-                  // Duración
                   Row(
-                    children: const [
-                      Icon(Icons.timer, color: Colors.blueLight),
+                    children: [
+                      Icon(Icons.timer, color: Colors.lightBlue), // Corregido a lightBlue
                       SizedBox(width: 4),
                       Text('120 min'),
                     ],
                   ),
-                  // Clasificación
                   Row(
-                    children: const [
+                    children: [
                       Icon(Icons.movie, color: Colors.greenAccent),
                       SizedBox(width: 4),
                       Text('PG-13'),
